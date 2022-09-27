@@ -6,14 +6,16 @@
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "git-branch-name-validate":"./node_modules/.bin/git-branch-name-validate"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [
-      "prettier --write"
+      "prettier --config .prettierrc --write",
+      "eslint --fix"
     ],
     "*.ts?(x)": [
       "prettier --parser=typescript --write"
@@ -21,19 +23,33 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
+    "current-git-branch": "^1.1.0",
     "react": "17.x",
     "react-dom": "17.x",
     "umi": "^3.5.34"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.5.34",
+    "commitlint": "^17.1.2",
     "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
+    "husky": "^8.0.1",
     "lint-staged": "^10.0.7",
-    "prettier": "^2.2.0",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.12.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^28.0.0",
     "typescript": "^4.1.2",
-    "yorkie": "^2.0.0"
+    "yorkie": "^2.0.0",
+    "git-branch-name-validate": "^0.1.1"
   }
 }

@@ -87,7 +87,6 @@ export default function IndexPage() {
   }, []);
   return (
     <div>
-      <div className={styles.bg}>title</div>
       <canvas id="canvas" width="500" height="500">
         当前浏览器不支持canvas元素，请升级或更换浏览器！
       </canvas>

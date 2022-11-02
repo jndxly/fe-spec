@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import styles from './index.less'
+import './index.less'
 export default function IndexPage() {
   const chessRef = useRef<HTMLCanvasElement>(null)
   let ctx!: CanvasRenderingContext2D

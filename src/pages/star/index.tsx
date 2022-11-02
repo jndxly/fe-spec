@@ -1,7 +1,7 @@
 import { ContextReplacementPlugin } from '@umijs/deps/compiled/webpack'
 import React, { createContext, useEffect, useRef } from 'react'
 import Star from './components/Star'
-import styles from './index.less'
+import './index.less'
 
 export default function IndexPage() {
   const starRef = useRef<HTMLCanvasElement>(null)

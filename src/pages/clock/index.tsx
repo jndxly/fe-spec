@@ -32,12 +32,13 @@ export default function IndexPage() {
       ctx.restore()
 
       ctx.beginPath()
-      for (let i = 0; i < 12; i++) {
+      for (let i = 1; i <= 12; i++) {
         ctx.rotate((Math.PI * 2) / 12)
         ctx.moveTo(0, -150)
         ctx.lineWidth = 3
         // ctx.strokeStyle = 'red'
         ctx.lineTo(0, -132)
+        ctx.fillText(i, -5, -115, 30)
         ctx.stroke()
       }
 
@@ -50,7 +51,7 @@ export default function IndexPage() {
 
   const startTimer = () => {
     const requestId = window.requestAnimationFrame(() => {
-      ctx.clearRect(-100, -100, 200, 200)
+      ctx.clearRect(-90, -90, 180, 180)
       const date = new Date()
       const hour = date.getHours() % 12
       const min = date.getMinutes()

@@ -7,7 +7,7 @@
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "git-branch-name-validate":"./node_modules/.bin/git-branch-name-validate"
+    "git-branch-name-validate": "./node_modules/.bin/git-branch-name-validate"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -24,8 +24,11 @@
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
     "current-git-branch": "^1.1.0",
+    "github-markdown-css": "^5.2.0",
     "react": "17.x",
     "react-dom": "17.x",
+    "react-markdown": "^8.0.7",
+    "remark-gfm": "^3.0.1",
     "umi": "^3.5.34"
   },
   "devDependencies": {
@@ -49,11 +52,6 @@
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^28.0.0",
     "typescript": "^4.1.2",
-    "yorkie": "^2.0.0",
-    "git-branch-name-validate": "^0.1.1"
-  },
-  "git-branch-name-validate": {
-    "pattern": "^(master|test(0|1|2)?){1}$|^(feat-)[a-zA-Z0-9\\u4e00-\\u9fa5]+-[a-zA-Z0-9\\u4e00-\\u9fa5]+$|^(hotfix-)[a-zA-Z0-9.]+$|^(release-)[a-zA-Z0-9.]+$|^v([0-9]+).([0-9]+)/(feat-)[a-zA-Z0-9\\u4e00-\\u9fa5]+-[a-zA-Z0-9\\u4e00-\\u9fa5]+$",
-    "errorMsg": "当前分支名称不符合规范无法 PUSH"
+    "yorkie": "^2.0.0"
   }
 }

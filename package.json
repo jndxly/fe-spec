@@ -53,5 +53,9 @@
     "stylelint-config-standard": "^28.0.0",
     "typescript": "^4.1.2",
     "yorkie": "^2.0.0"
+  },
+  "git-branch-name-validate":{
+    "pattern": "^(master|release|dev(0|1|2)?){1}$|^(feat-)[a-zA-Z0-9\u4e00-\u9fa5]+-[a-zA-Z0-9\u4e00-\u9fa5]+$|^[a-zA-Z0-9\u4e00-\u9fa5]+(-feat-)[a-zA-Z0-9\u4e00-\u9fa5]+$|^[a-zA-Z0-9\u4e00-\u9fa5]+(-hotfix-)[a-zA-Z0-9\u4e00-\u9fa5]+$|^(release-)[a-zA-Z0-9.]+$|^v([0-9]+).([0-9]+)/[a-zA-Z0-9\u4e00-\u9fa5]+(-feat-)[a-zA-Z0-9\u4e00-\u9fa5]+$",
+    "errorMsg": "当前分支名称不符合规范无法 PUSH，详见：https://duapp.yuque.com/team_tech/wktz1k/hbn4sx"
   }
 }

@@ -18,10 +18,11 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
+    'react-in-jsx-scope': 'off',
   },
   settings: {
     react: {
       version: '999.999.999',
     },
   },
-};
+}

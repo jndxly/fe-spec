@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import { ContextType, DrapProps, LayoutItem } from './interface'
-import { initLayout } from './contant'
+import { initLayout } from './constant'
 import styles from './index.less'
 import Row from './components/Row'
 import { DndProvider } from 'react-dnd'
@@ -25,12 +25,18 @@ export default function LowCode() {
           {layout.map((item, index) => {
             return (
               <>
-                <DropZone className="dropZoneHorizontal" path={`${index}`} />
+                <DropZone
+                  className={styles.dropZoneHorizontal}
+                  path={`${index}`}
+                />
                 <Row key={`row_id_${item.id}`} rowIndex={index} data={item} />
               </>
             )
           })}
-          <DropZone className="dropZoneHorizontal" path={`${layout.length}`} />
+          <DropZone
+            className={styles.dropZoneHorizontal}
+            path={`${layout.length}`}
+          />
           <div className={styles.bottomBar}>
             <BarItem type="aaa" />
             <BarItem type="bbb" />

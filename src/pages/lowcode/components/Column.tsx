@@ -37,7 +37,7 @@ export default function Column(props: React.PropsWithoutRef<ColumnProps>) {
         )
       })}
       <DropZone
-        className="dropZoneHorizontal"
+        className={styles.dropZoneHorizontal}
         path={`${path}-${children.length}`}
       />
     </div>

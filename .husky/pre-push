@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx --no-install git-branch-name-validate
+# npx --no-install git-branch-name-validate

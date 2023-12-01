@@ -1,4 +1,4 @@
-import { DropZoneProps, DrapProps } from '../interface'
+import { DropZoneProps, DragProps } from '../interface'
 import styles from '../index.less'
 import { useDrop } from 'react-dnd'
 import { useContext } from 'react'
@@ -6,11 +6,15 @@ import { LayoutContext } from '..'
 
 export default function DropZone(props: DropZoneProps) {
   const { swapPosition } = useContext(LayoutContext)
-
+  const { area, currentChildrenNum, path } = props
   const [{ overing }, drop] = useDrop({
     accept: ['column', 'row', 'component', 'barItem'],
-    drop(item: DrapProps) {
-      swapPosition(item, props.path)
+    drop(item: DragProps) {
+      swapPosition(item, {
+        area,
+        currentChildrenNum,
+        path,
+      })
     },
     collect(monitor) {
       return {

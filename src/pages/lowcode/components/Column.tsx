@@ -1,4 +1,4 @@
-import { ColumnProps } from '../interface'
+import { Area, ColumnProps } from '../interface'
 import styles from '../index.less'
 import Component from './Component'
 import React from 'react'
@@ -22,6 +22,8 @@ export default function Column(props: React.PropsWithoutRef<ColumnProps>) {
         return (
           <>
             <DropZone
+              currentChildrenNum={children.length}
+              area={Area.COLUMN}
               key={index}
               path={`${path}-${index}`}
               className={styles.dropZoneHorizontal}
@@ -37,6 +39,8 @@ export default function Column(props: React.PropsWithoutRef<ColumnProps>) {
         )
       })}
       <DropZone
+        currentChildrenNum={children.length}
+        area={Area.COLUMN}
         className={styles.dropZoneHorizontal}
         path={`${path}-${children.length}`}
       />

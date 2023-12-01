@@ -77,4 +77,11 @@ export const initLayout: LayoutItem[] = [
       },
     ],
   },
+  {
+    type: COMPONENT,
+    id: 'component6',
+    component: {
+      type: 'aaa',
+    },
+  },
 ]

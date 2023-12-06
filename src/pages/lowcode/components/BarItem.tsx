@@ -1,4 +1,4 @@
-import { BaritemProps } from '../interface'
+import { Area, BaritemProps } from '../interface'
 import { registeredComponent } from './Component'
 import styles from '../index.less'
 import { useDrag } from 'react-dnd'
@@ -8,7 +8,16 @@ export default function BarItem(props: React.PropsWithoutRef<BaritemProps>) {
 
   const [, drag] = useDrag({
     type: 'barItem',
-    item: props,
+    item: {
+      type: 'component',
+      path: '',
+      data: {
+        component: {
+          type: props.type,
+        },
+      },
+      area: Area.OUTSIDE,
+    },
   })
 
   return (

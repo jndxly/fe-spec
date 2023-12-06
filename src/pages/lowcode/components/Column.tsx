@@ -14,6 +14,7 @@ export default function Column(props: React.PropsWithoutRef<ColumnProps>) {
       type: 'column',
       path,
       data: props.data,
+      area: props.area,
     },
   })
   return (
@@ -29,6 +30,7 @@ export default function Column(props: React.PropsWithoutRef<ColumnProps>) {
               className={styles.dropZoneHorizontal}
             />
             <Component
+              area={Area.COLUMN}
               key={`comp_id_${item.id}`}
               data={item}
               rowIndex={props.rowIndex}
@@ -39,6 +41,7 @@ export default function Column(props: React.PropsWithoutRef<ColumnProps>) {
         )
       })}
       <DropZone
+        key={children.length + 1}
         currentChildrenNum={children.length}
         area={Area.COLUMN}
         className={styles.dropZoneHorizontal}

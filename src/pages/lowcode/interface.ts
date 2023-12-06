@@ -12,26 +12,30 @@ export interface CompoentProps {
   rowIndex: number
   columnIndex?: number
   compIndex?: number
+  area: Area // 当前所在区域是row还是column
 }
 
 export interface ColumnProps {
   data: LayoutItem
   columnIndex: number
   rowIndex: number
+  area: Area // 当前所在区域是row还是column
 }
 
 export interface RowProps {
   data: LayoutItem
   rowIndex: number
+  area: Area // 当前所在区域是row还是column
 }
 
 export interface BaritemProps {
   type: string
 }
 export enum Area {
-  ROW = 'row', //当前dropZone在Row中
-  COLUMN = 'column', //当前dropZone在Column中
-  ROOT = 'root', // 当前dropZone在最顶层
+  ROW = 'row', //当前在Row中
+  COLUMN = 'column', //当前在Column中
+  ROOT = 'root', // 当前在最顶层
+  OUTSIDE = 'outside', //当前在外部组件库中
 }
 export interface DropZoneProps {
   className: string
@@ -46,6 +50,7 @@ export interface DragProps {
   type: string
   path: string
   data: LayoutItem
+  area: Area
 }
 
 export type ContextType = {

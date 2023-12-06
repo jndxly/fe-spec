@@ -16,6 +16,7 @@ export default function Row(props: React.PropsWithoutRef<RowProps>) {
       path,
       type: 'row',
       data: props.data,
+      area: props.area,
     },
   })
   return (
@@ -31,6 +32,7 @@ export default function Row(props: React.PropsWithoutRef<RowProps>) {
             />
             {item.type === COMPONENT ? (
               <Component
+                area={Area.ROW}
                 key={`comp_id_${item.id}`}
                 data={item}
                 rowIndex={index}
@@ -39,6 +41,7 @@ export default function Row(props: React.PropsWithoutRef<RowProps>) {
               />
             ) : (
               <Column
+                area={Area.ROW}
                 key={`col_id_${item.id}`}
                 data={item}
                 rowIndex={props.rowIndex}

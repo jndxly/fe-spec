@@ -14,11 +14,7 @@ export const registeredComponent: Record<string, any> = {
 export default function Component(props: React.PropsWithoutRef<CompoentProps>) {
   const { component } = props.data
 
-  // 对于原子组件一个组件占据一行，只有rowIndex
-  let path = `${props.rowIndex}`
-  if (props.columnIndex && props.compIndex) {
-    path = `${props.rowIndex}-${props.columnIndex}-${props.compIndex}`
-  }
+  const path = `${props.rowIndex}-${props.columnIndex}-${props.compIndex}`
 
   const [, drag] = useDrag({
     type: 'component',
@@ -26,6 +22,7 @@ export default function Component(props: React.PropsWithoutRef<CompoentProps>) {
       type: 'component',
       path,
       data: props.data,
+      area: props.area,
     },
   })
   const Comp = registeredComponent[component!.type]

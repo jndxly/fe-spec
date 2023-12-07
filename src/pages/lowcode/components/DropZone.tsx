@@ -6,13 +6,12 @@ import { LayoutContext } from '..'
 
 export default function DropZone(props: DropZoneProps) {
   const { swapPosition } = useContext(LayoutContext)
-  const { area, currentChildrenNum, path } = props
+  const { area, path } = props
   const [{ overing }, drop] = useDrop({
     accept: ['column', 'row', 'component', 'barItem'],
     drop(item: DragProps) {
       swapPosition(item, {
         area,
-        currentChildrenNum,
         path,
       })
     },

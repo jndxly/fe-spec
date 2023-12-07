@@ -9,13 +9,8 @@ export default function BarItem(props: React.PropsWithoutRef<BaritemProps>) {
   const [, drag] = useDrag({
     type: 'barItem',
     item: {
-      type: 'component',
       path: '',
-      data: {
-        component: {
-          type: props.type,
-        },
-      },
+      ...props,
       area: Area.OUTSIDE,
     },
   })

@@ -10,22 +10,21 @@ import Component from './Component'
 export default function Row(props: React.PropsWithoutRef<RowProps>) {
   const { children = [] } = props.data
   const path = props.rowIndex + ''
-  const [, drag] = useDrag({
-    type: 'row',
-    item: {
-      path,
-      type: 'row',
-      data: props.data,
-      area: props.area,
-    },
-  })
+  // const [, drag] = useDrag({
+  //   type: 'row',
+  //   item: {
+  //     path,
+  //     type: 'row',
+  //     data: props.data,
+  //     area: props.area,
+  //   },
+  // })
   return (
-    <div className={styles.row} ref={drag}>
+    <div className={styles.row}>
       {children?.map((item, index) => {
         return (
           <>
             <DropZone
-              currentChildrenNum={children.length}
               area={Area.ROW}
               className={styles.dropZoneVertical}
               path={`${path}-${index}`}
@@ -52,7 +51,6 @@ export default function Row(props: React.PropsWithoutRef<RowProps>) {
         )
       })}
       <DropZone
-        currentChildrenNum={children.length}
         area={Area.ROW}
         className={styles.dropZoneVertical}
         path={`${path}-${children.length}`}

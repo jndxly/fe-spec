@@ -41,7 +41,6 @@ export interface DropZoneProps {
   className: string
   path: string
   area: Area // 当前所在区域是row还是column
-  currentChildrenNum: number // 当前所在区域child数量
 }
 
 export type DropItem = Omit<DropZoneProps, 'className'>

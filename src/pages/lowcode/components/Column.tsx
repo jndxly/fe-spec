@@ -8,22 +8,21 @@ import DropZone from './DropZone'
 export default function Column(props: React.PropsWithoutRef<ColumnProps>) {
   const { children = [] } = props.data
   const path = `${props.rowIndex}-${props.columnIndex}`
-  const [, drag] = useDrag({
-    type: 'column',
-    item: {
-      type: 'column',
-      path,
-      data: props.data,
-      area: props.area,
-    },
-  })
+  // const [, drag] = useDrag({
+  //   type: 'column',
+  //   item: {
+  //     type: 'column',
+  //     path,
+  //     data: props.data,
+  //     area: props.area,
+  //   },
+  // })
   return (
-    <div className={styles.column} ref={drag}>
+    <div className={styles.column}>
       {children?.map((item, index) => {
         return (
           <>
             <DropZone
-              currentChildrenNum={children.length}
               area={Area.COLUMN}
               key={index}
               path={`${path}-${index}`}
@@ -42,7 +41,6 @@ export default function Column(props: React.PropsWithoutRef<ColumnProps>) {
       })}
       <DropZone
         key={children.length + 1}
-        currentChildrenNum={children.length}
         area={Area.COLUMN}
         className={styles.dropZoneHorizontal}
         path={`${path}-${children.length}`}

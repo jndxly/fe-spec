@@ -23,9 +23,12 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
+    "@xrenders/schema-builder": "^1.0.0-alpha.13",
     "current-git-branch": "^1.1.0",
+    "fr-generator": "^2.8.9",
     "github-markdown-css": "^5.2.0",
     "react": "17.x",
+    "react-bmapgl": "^0.2.26",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "17.x",
@@ -36,6 +39,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@types/bmapgl": "^0.0.7",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^5.38.0",

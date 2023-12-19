@@ -9,4 +9,4 @@ declare module '*.svg' {
   export default url
 }
 
-declare var BMapGL: any
+declare var AMap: any

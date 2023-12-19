@@ -9,4 +9,10 @@ export default defineConfig({
   //   { path: '/snake', component: '@/pages/snake' },
   // ],
   fastRefresh: {},
+  devServer: {
+    https: {
+      key: './key.pem',
+      cert: './cert.pem',
+    },
+  },
 })
